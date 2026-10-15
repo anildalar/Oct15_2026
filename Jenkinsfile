@@ -8,5 +8,11 @@ pipeline{
 			}
 		}
 	}
+	post{
+		always{
+			sh 'This is always execute';
+			deleteDir()
+		}
+	}
 
 }
