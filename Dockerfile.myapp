@@ -5,7 +5,7 @@ RUN apt upgrade -y
 
 WORKDIR /app
 
-COPY myapp/package*.json ./
+COPY myapp/ ./
 
 RUN npm install
 
