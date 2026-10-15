@@ -3,11 +3,12 @@ FROM node:latest
 RUN apt update -y
 RUN apt upgrade -y
 
-RUN npm install -g create-vite
-
 WORKDIR /app
 
-COPY myapp/ .
+COPY myapp/package*.json ./
+
+RUN npm install
+
 
 CMD ["npm","run","dev","--","--host","0.0.0.0"]
 #npm run dev -- --host 0.0.0.0
