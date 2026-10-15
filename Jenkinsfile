@@ -4,7 +4,7 @@ pipeline{
 		stage("Hello"){
 			steps{
 	
-				sh "echo hello world"
+				sh "node -v"
 			}
 		}
 	}
