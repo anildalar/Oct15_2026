@@ -1,0 +1,8 @@
+services:
+  myapp:
+    image: oklabs/myreactapp:t${BUILD_NUMBER}
+    build:
+      context: .
+      dockerfile: Dockerfile.myapp
+    network_mode: host
+

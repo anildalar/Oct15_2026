@@ -1,0 +1,8 @@
+services:
+  jenkins:
+    image: jenkins/jenkins:latest
+    user: root
+    privileged: true
+    network_mode: host
+    volumes:
+      - ./jenkins_home:/var/jenkins_home
