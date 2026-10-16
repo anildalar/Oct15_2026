@@ -11,6 +11,9 @@ pipeline{
 			steps{
 	
 				sh "node -v"
+				sh "ls -al"
+				sh "pwd"
+				sh "npm run build"
 			}
 		}
 		stage("Hello2"){
@@ -31,7 +34,7 @@ pipeline{
 	post{
 		always{
 			sh 'echo This is always execute';
-			deleteDir()
+			//deleteDir()
 		}
 	}
 
