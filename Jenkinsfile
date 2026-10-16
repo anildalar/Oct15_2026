@@ -13,7 +13,7 @@ pipeline{
 				sh "node -v"
 				sh "ls -al"
 				sh "pwd"
-				sh 'cd myapp'
+				dir('myapp')
 				sh 'pwd'
 				sh "npm run build"
 				sh "cd .."
