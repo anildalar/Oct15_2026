@@ -18,7 +18,7 @@ pipeline{
 				nodejs 'nodev26120'
 			}
 			steps{
-				//sh 'node -v'
+				sh 'echo Hello ANil How are'
 			}
 
 		}
