@@ -4,5 +4,6 @@ services:
     user: root
     privileged: true
     network_mode: host
+    restart: unless-stopped
     volumes:
       - ./jenkins_home:/var/jenkins_home
