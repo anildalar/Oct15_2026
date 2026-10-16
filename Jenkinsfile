@@ -13,10 +13,13 @@ pipeline{
 				sh "node -v"
 				sh "ls -al"
 				sh "pwd"
-				dir('myapp')
-				sh 'pwd'
-				sh "npm run build"
-				sh "cd .."
+				dir('myapp'){
+					
+					sh '''
+					pwd
+					npm run build
+					'''
+				}
 			}
 		}
 		stage("Hello2"){
