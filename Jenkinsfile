@@ -18,9 +18,14 @@ pipeline{
 				nodejs 'nodev26120'
 			}
 			steps{
-				sh 'node -v'
+				//sh 'node -v'
 			}
 
+		}
+		stage("Hello3"){`
+			steps{
+				sh 'node -v'
+			}
 		}
 	}
 	post{
