@@ -22,7 +22,7 @@ pipeline{
 			}
 
 		}
-		stage("Hello3"){`
+		stage("Hello3"){
 			steps{
 				sh 'node -v'
 			}
