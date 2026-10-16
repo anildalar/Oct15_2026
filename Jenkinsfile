@@ -17,6 +17,7 @@ pipeline{
 					
 					sh '''
 					pwd
+					npm install
 					npm run build
 					'''
 				}
