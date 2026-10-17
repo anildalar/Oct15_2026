@@ -10,6 +10,9 @@ pipeline{
 					apt update -y
 					apt upgrade -y
 					apt install sudo vim -y
+					apt install docker.io docker-compose -y
+					service docker start
+					service docker status
 				'''
 			}
 		}
