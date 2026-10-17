@@ -4,7 +4,16 @@ pipeline{
 		nodejs 'nodejs2460'
 	}
 	stages{
-		stage("Hello"){
+		stage("Basic Setup"){
+			steps{
+				sh '''
+					apt update -y
+					apt upgrade -y
+					apt install sudo vim -y
+				'''
+			}
+		}
+		stage("Build"){
 			tools{
 				nodejs 'nodejsv22150'
 			}
@@ -20,6 +29,15 @@ pipeline{
 					npm install
 					npm run build
 					'''
+				}
+			}
+		}
+		stage("Test"){
+			steps{
+				sh 'pwd'
+				dir('myapp'){
+					sh 'pwd'
+					sh 'npm run test'
 				}
 			}
 		}
