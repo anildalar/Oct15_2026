@@ -41,12 +41,16 @@ pipeline{
 				}
 			}
 		}
-		stage("Hello2"){
+		stage("Build Docker Image and Push to Registry"){
 			tools{
 				nodejs 'nodev26120'
 			}
 			steps{
-				sh 'echo Hello ANil How are'
+				withCredentials([usernamePassword(credentialsId: 'docker-hub-repo', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                    			sh 'docker image build -t oklabs/myimage2 .'
+                    			sh "echo $PASS | docker login -u $USER --password-stdin"
+                    			sh 'docker image push oklabs/myimage2'
+                		}
 			}
 
 		}
